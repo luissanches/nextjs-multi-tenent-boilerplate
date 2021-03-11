@@ -4,7 +4,7 @@ import useSWR from 'swr'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-export default SignUp = ({data}) => {
+export default function SignUp ({data}) {
   let [count, setCount] = useState(0) 
 //   const { data, error } = useSWR('http://localhost:3000/api/users', fetcher)
 //   if (error) return <div>failed to load</div>
