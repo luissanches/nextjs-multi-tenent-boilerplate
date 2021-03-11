@@ -7,16 +7,12 @@ import moment from 'moment'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-function SignUp({ data, today }) {
+function Login({ data, today }) {
     let [count, setCount] = useState(0)
-    //   const { data, error } = useSWR('http://localhost:3000/api/users', fetcher)
-    //   if (error) return <div>failed to load</div>
-    //   if (!data) return <div>loading...</div>
-    // alert(JSON.stringify(data))
     return (
         <div>
             <Head>
-                <title>Multi Tenent Application [sign up]</title>
+            <title>Multi Tenent Application [login]</title>
             </Head>
             <h1>Next Test {data.name}</h1>
             <p>count: {count}</p>
@@ -26,17 +22,16 @@ function SignUp({ data, today }) {
     )
 }
 
-export const getStaticProps = async (context) => {
-    const data = await fetcher('https://nextjs-multi-tenent-boilerplate.vercel.app/api/users')
+export const getServerSideProps = async (context) => {
     let today = moment().format('DD/MM/YYYY - HH:mm:ss')
+    const data = await fetcher('https://nextjs-multi-tenent-boilerplate.vercel.app/api/users')
     return {
         props: {
             today,
             data
-        },
-        revalidate: 3
+        }
     }
 }
 
 
-export default SignUp
+export default Login
