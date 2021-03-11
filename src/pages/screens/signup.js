@@ -15,7 +15,7 @@ export default function SignUp ({data}) {
         <title>Create Next Yoston</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Next Test {data.name}</h1>
+      <h1>Next Test {data && data.name}</h1>
       <p>count: {count}</p>
       <button onClick={()=>setCount(count+1)}>ok</button>
     </div>
