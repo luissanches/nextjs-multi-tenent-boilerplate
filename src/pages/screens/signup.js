@@ -22,12 +22,12 @@ export default SignUp = ({data}) => {
   )
 }
 
-export const getStaticProps = async () => {
-  const data = await fetcher('http://localhost:3000/api/users')
-  return {
-    props:{
-      name: data.name
-    },
-    revalidate: 10
-  }
-}
+// export const getStaticProps = async () => {
+//   const data = await fetcher('http://localhost:3000/api/users')
+//   return {
+//     props:{
+//       name: data.name
+//     },
+//     revalidate: 10
+//   }
+// }
