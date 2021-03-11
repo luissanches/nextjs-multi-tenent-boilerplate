@@ -18,6 +18,7 @@ function Home() {
       {/* <h1>Next Test {data && data.name}</h1> */}
       <p>count: {count}</p>
       <button onClick={()=>setCount(count+1)}>ok</button>
+      
     </div>
   )
 }
